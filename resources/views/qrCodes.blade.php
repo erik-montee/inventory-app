@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-2">
                     <p class="mb-0">{{ $record->name }}</p>
-                    <img src="data:image/svg+xml;base64, {{ base64_encode($svg) }}" />;
+                    <img src="data:image/svg+xml;base64, {{ base64_encode($record->renderQr()) }}" />;
                 </div>
             </div>
     @endforeach
