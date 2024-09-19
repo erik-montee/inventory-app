@@ -3,7 +3,7 @@
     @foreach ($records as $record)
             <div class="row">
                 <div class="col-md-2">
-                    <p class="mb-0">{{ $record->name }}</p>
+                    <p class="mb-0">{{ $record->name }}</p><br>
                     <img src="data:image/svg+xml;base64, {{ base64_encode($record->renderQr()) }}" />;
                 </div>
             </div>

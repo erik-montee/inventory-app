@@ -62,11 +62,6 @@ class ItemResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\Action::make('printQrCode')
-                ->label('Print QR')
-                ->action('printQrCode')
-                ->icon('heroicon-o-printer'),
-            ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
