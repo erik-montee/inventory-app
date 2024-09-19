@@ -22,6 +22,6 @@ class Item extends Model
 
     public function renderQr()
     {
-        return QrCode::size(150)->format('png')->generate(url('/item/') . $this->id . '/update');
+        return QrCode::size(150)->format('svg')->generate(url('/item/') . $this->id . '/update');
     }
 }
