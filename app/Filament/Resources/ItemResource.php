@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Blade;
 class ItemResource extends Resource
 {
     protected static ?string $model = Item::class;
-
+    protected static ?string $navigationGroup = 'Inventory';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
@@ -38,9 +38,14 @@ class ItemResource extends Resource
                 Forms\Components\TextInput::make('quantity')
                     ->required()
                     ->label('Quantity'),
+                Forms\Components\TextInput::make('notification_quantity')
+                    ->required()
+                    ->label('Notification Quantity'),    
                 Forms\Components\TextInput::make('location_catagory_1')
+                    ->required()
                     ->label('Location Identifier 1'),
                 Forms\Components\TextInput::make('location_catagory_2')
+                    ->required()
                     ->label('Location Identifier 2'),
             ]);
     }
