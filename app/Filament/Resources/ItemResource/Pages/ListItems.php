@@ -28,8 +28,4 @@ class ListItems extends ListRecords
         ]);
     }
 
-    public function printBulkQrCodes($records)
-    {
-        dd($records);
-    }
 }

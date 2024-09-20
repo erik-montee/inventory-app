@@ -59,6 +59,10 @@ class ItemResource extends Resource
                 Tables\Columns\TextColumn::make('description'),
                 Tables\Columns\TextColumn::make('type')
                     ->sortable(),
+                Tables\Columns\TextColumn::make('location_catagory_1')
+                    ->label("Location 1"),
+                Tables\Columns\TextColumn::make('location_catagory_2')
+                    ->label("Location 2"),
                 Tables\Columns\TextColumn::make('quantity')
                     ->searchable(),
             ])

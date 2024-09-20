@@ -7,6 +7,7 @@ use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use App\Filament\Resources\ItemResource\Widgets\LowStock;
 use App\Filament\Resources\ItemResource\Widgets\MostRemovedItems;
+use App\Filament\Resources\ItemResource\Widgets\LastUsersToGrabItems;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -40,7 +41,8 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 LowStock::class,
-                MostRemovedItems::class
+                MostRemovedItems::class,
+                LastUsersToGrabItems::class
             ])
             ->middleware([
                 EncryptCookies::class,
