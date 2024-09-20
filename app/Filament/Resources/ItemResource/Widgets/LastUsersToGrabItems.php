@@ -13,7 +13,7 @@ class LastUsersToGrabItems extends BaseWidget
     public function table(Table $table): Table
     {
         return $table
-            ->query( ItemChangeLog::with('item')->where('created_at', '>', now()->subMonth() ) )
+            ->query( ItemChangeLog::whereHas('item')->with('item')->where('created_at', '>', now()->subMonth() )->orderBy('created_at', 'desc') )
             ->defaultPaginationPageOption(5)    
             ->columns([
                 Tables\Columns\TextColumn::make('user_identifing_info_1')
