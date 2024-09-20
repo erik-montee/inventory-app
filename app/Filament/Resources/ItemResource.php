@@ -55,11 +55,14 @@ class ItemResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                ->searchable(),
-                Tables\Columns\TextColumn::make('description'),
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('description')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('type')
+                    ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('location_catagory_1')
+                    ->searchable()
                     ->label("Location 1"),
                 Tables\Columns\TextColumn::make('location_catagory_2')
                     ->label("Location 2"),
