@@ -22,6 +22,9 @@ class ItemController extends Controller
     public function itemForm(Request $request, $id)
     {
         $item = Item::find($id);
+        if($item ==null) {
+            return "Item has been deleted.";
+        }
         return view('form', ['item'=> $item, 'submitted' => $request['submitted']]);
     }
 }
