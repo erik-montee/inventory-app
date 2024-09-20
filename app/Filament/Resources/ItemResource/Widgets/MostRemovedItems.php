@@ -16,7 +16,8 @@ class MostRemovedItems extends BaseWidget
         return $table
             ->query( Item::withSum(['changes' => function($q) {
                 $q->where('created_at', '>', now()->subMonth());
-            }], 'quantity'))
+            }], 'quantity')
+            ->having('changes_sum_quantity', '>', 0))
             ->defaultPaginationPageOption(5)    
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
