@@ -49,6 +49,10 @@ return [
         'ses' => [
             'transport' => 'ses',
         ],
+        
+        'mailersend' => [
+            'transport' => 'mailersend',
+        ],
 
         'postmark' => [
             'transport' => 'postmark',
